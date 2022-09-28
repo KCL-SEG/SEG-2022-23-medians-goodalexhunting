@@ -3,9 +3,15 @@
 
 def getMedian(numList):
     numList.sort()
-    n1 = numList[int(len(numList)/2)] 
-    n2 = numList[int(len(numList)/2)+1]
-    return (n1+n2)/2 if len(numList)%2 > 0 else n1
+    if len(numList) == 1:
+        return numList[0]
+    if len(numList)%2 > 0:
+        return numList[int(len(numList)/2)] 
+    else:
+        n1 = numList[int(len(numList)/2)] 
+        n2 = numList[int(len(numList)/2)-1]
+        return (n1+n2)/2
+    
 
 if __name__ == "__main__":
     while True:
